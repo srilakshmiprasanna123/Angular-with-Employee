@@ -1,0 +1,51 @@
+<div class = "main-content">
+    <div class = "header-content employee-header">
+        <div class = "emp-detail-text">
+            <button class ="add-button" (click)="onAddUser()"> Add User</button>
+        </div>
+        <div class ="table-main">
+            <table id ="table-display" class="table">
+            <tr>
+                <th>id</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>profile</th>
+                <th>gender</th>
+                <th>Department</th>
+                <th>startdate</th>
+                <th>salary</th>
+                <th>notes</th>
+                <th>Action</th>
+            </tr>  
+            
+            <tr *ngFor="let emp of employee" class="detailoftab">
+                <!-- <td>{{emp.id}}</td> -->
+                <td>{{emp.id}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+               
+                
+                <td>
+                  <img [src]="emp.profilePic" alt="">
+                </td>
+                <td>{{emp.gender}}</td>
+                <td>
+                  <div class="department-label">
+                      {{emp.department}}
+                  </div>
+                </td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.startdate}}</td>
+                <td>{{emp.notes}}</td>
+                <td>
+                    <img src="../assets/edit.svg" (click)="updateById(emp.id)" />
+                  </td>
+
+                  <td>
+                    <img src="../assets/delete.svg" (click)="deleteById(emp.id)" />
+                  </td>
+
+            </table>
+        </div>
+    </div>
+</div>
